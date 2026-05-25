@@ -1,0 +1,10 @@
+{
+  "id": "PROT-SEPSE-001",
+  "titulo": "Manejo Inicial de Sepse e Choque Séptico",
+  "nivel_evidencia": "A",
+  "condicoes_aplicaveis": ["sepse", "choque séptico", "infecção grave", "bacteremia"],
+  "contraindicacoes": ["alergia conhecida ao antibiótico empírico escolhido"],
+  "termos_emergencia": ["choque séptico", "sepse grave"],
+  "vigente": true,
+  "texto": "Manejo inicial de sepse e choque séptico. 1. Reconhecimento precoce: avaliar critérios qSOFA (frequência respiratória ≥22, alteração do nível de consciência, PAS ≤100 mmHg). 2. Coleta de lactato sérico e hemoculturas antes do antibiótico, sem atrasar a administração. 3. Antibiótico empírico de amplo espectro em até 1 hora do reconhecimento, ajustado conforme foco suspeito e perfil microbiológico local. 4. Reposição volêmica com cristaloide 30 mL/kg em até 3 horas para pacientes com hipoperfusão. 5. Vasopressor (norepinefrina) se PAM <65 mmHg após reposição. 6. Reavaliação clínica contínua e descalonamento de antibióticos conforme cultura."
+}

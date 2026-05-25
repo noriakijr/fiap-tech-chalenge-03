@@ -1,0 +1,50 @@
+[
+  {
+    "medicamento_a": "Varfarina",
+    "medicamento_b": "AAS",
+    "severidade": "grave",
+    "descricao": "Risco aumentado de sangramento grave por sinergia anticoagulante e antiagregante."
+  },
+  {
+    "medicamento_a": "Varfarina",
+    "medicamento_b": "Amoxicilina",
+    "severidade": "moderada",
+    "descricao": "Antibióticos podem potencializar o efeito da varfarina; monitorar RNI."
+  },
+  {
+    "medicamento_a": "Sinvastatina",
+    "medicamento_b": "Claritromicina",
+    "severidade": "grave",
+    "descricao": "Inibição do CYP3A4 aumenta o risco de rabdomiólise."
+  },
+  {
+    "medicamento_a": "Losartana",
+    "medicamento_b": "Ibuprofeno",
+    "severidade": "moderada",
+    "descricao": "AINEs reduzem o efeito anti-hipertensivo e aumentam risco renal."
+  },
+  {
+    "medicamento_a": "Metformina",
+    "medicamento_b": "Contraste iodado",
+    "severidade": "grave",
+    "descricao": "Risco aumentado de acidose láctica após exame contrastado."
+  },
+  {
+    "medicamento_a": "Amoxicilina",
+    "medicamento_b": "Metotrexato",
+    "severidade": "moderada",
+    "descricao": "Penicilinas podem aumentar toxicidade do metotrexato."
+  },
+  {
+    "medicamento_a": "Captopril",
+    "medicamento_b": "Espironolactona",
+    "severidade": "moderada",
+    "descricao": "Risco de hipercalemia pela combinação IECA + diurético poupador de potássio."
+  },
+  {
+    "medicamento_a": "Digoxina",
+    "medicamento_b": "Furosemida",
+    "severidade": "leve",
+    "descricao": "Hipocalemia induzida pelo diurético potencializa toxicidade digitálica."
+  }
+]
