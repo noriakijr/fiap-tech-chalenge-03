@@ -18,13 +18,31 @@ A especificação completa está em `.kiro/specs/medical-virtual-assistant/`:
 
 ### 1. Criar ambiente virtual e instalar dependências
 
+**Linux / macOS**
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate          # Linux / macOS
-# .venv\Scripts\activate           # Windows
-
+source .venv/bin/activate
 pip install -r requirements-dev.txt
 ```
+
+**Windows — PowerShell**
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements-dev.txt
+```
+
+> Se receber o erro `running scripts is disabled`, execute antes:
+> `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+
+**Windows — Prompt de Comando (CMD)**
+```cmd
+python -m venv .venv
+.venv\Scripts\activate.bat
+pip install -r requirements-dev.txt
+```
+
+> No Windows use `python` em vez de `python3` nos passos seguintes.
 
 ### 2. Configurar variáveis de ambiente
 
@@ -88,8 +106,9 @@ A API ficará disponível em `http://localhost:8000`. Endpoints úteis:
 
 ### Exemplo rápido via curl
 
+**Linux / macOS**
 ```bash
-# Cria sessão
+# Cria sessão e captura o ID
 SESSAO=$(curl -s -X POST http://localhost:8000/v1/sessao \
   -H "Content-Type: application/json" \
   -d '{"id_medico": "DR-001"}' | python3 -c "import sys,json; print(json.load(sys.stdin)['sessao_id'])")
@@ -99,6 +118,20 @@ curl -s -X POST http://localhost:8000/v1/consulta \
   -H "Content-Type: application/json" \
   -d "{\"texto\": \"Tratamento de primeira linha para pneumonia bacteriana?\", \"sessao_id\": \"$SESSAO\"}" \
   | python3 -m json.tool
+```
+
+**Windows — PowerShell**
+```powershell
+# Cria sessão e captura o ID
+$sessao = (curl -s -X POST http://localhost:8000/v1/sessao `
+  -H "Content-Type: application/json" `
+  -d '{"id_medico": "DR-001"}' | python -c "import sys,json; print(json.load(sys.stdin)['sessao_id'])")
+
+# Pergunta clínica
+curl -s -X POST http://localhost:8000/v1/consulta `
+  -H "Content-Type: application/json" `
+  -d "{`"texto`": `"Tratamento de primeira linha para pneumonia bacteriana?`", `"sessao_id`": `"$sessao`"}" `
+  | python -m json.tool
 ```
 
 Veja mais exemplos em [`docs/api.md`](docs/api.md).
