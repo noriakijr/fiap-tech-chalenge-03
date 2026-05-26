@@ -12,18 +12,66 @@ A especificação completa está em `.kiro/specs/medical-virtual-assistant/`:
 
 - Python 3.11+ (testado com 3.13)
 - `pip`
+- Chave de API OpenAI (`OPENAI_API_KEY`) — necessária para geração de embeddings e respostas via LLM.
 
-## Setup local
+## Rodando localmente (passo a passo)
+
+### 1. Criar ambiente virtual e instalar dependências
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate          # Linux / macOS
+# .venv\Scripts\activate           # Windows
+
 pip install -r requirements-dev.txt
-cp .env.example .env
-# edite .env com sua OPENAI_API_KEY
 ```
 
-## Subindo a API
+### 2. Configurar variáveis de ambiente
+
+```bash
+cp .env.example .env
+```
+
+Abra `.env` e preencha pelo menos a `OPENAI_API_KEY`:
+
+```
+OPENAI_API_KEY=sk-...
+```
+
+As demais variáveis já têm valores padrão funcionais para desenvolvimento local (SQLite + FAISS em `data/`).
+
+### 3. Inicializar o banco de dados
+
+Cria as tabelas e insere pacientes, exames e medicamentos de exemplo:
+
+```bash
+python -m scripts.init_db
+```
+
+> Para resetar e recriar do zero: `python -m scripts.init_db --reset`
+
+### 4. Indexar a base de conhecimento (FAISS)
+
+Lê os arquivos de `data/pubmedqa/` e `data/protocolos/`, gera embeddings via OpenAI e salva o índice vetorial em `data/faiss_index/`:
+
+```bash
+python -m scripts.build_kb
+```
+
+Saída esperada:
+
+```
+  PubMedQA: sample.json → 6 entradas
+  Protocolos: 3 documentos carregados
+
+Total: 9 documentos (6 artigos + 3 protocolos)
+Gerando embeddings e construindo índice FAISS em 'data/faiss_index'...
+✓ Índice FAISS salvo em data/faiss_index
+```
+
+> **Sem `OPENAI_API_KEY`:** a API inicia em modo degradado. Endpoints de consulta, conduta e tratamento retornam `503`; o endpoint de exames continua funcionando normalmente.
+
+### 5. Subir a API
 
 ```bash
 uvicorn app.main:app --reload
@@ -31,8 +79,29 @@ uvicorn app.main:app --reload
 
 A API ficará disponível em `http://localhost:8000`. Endpoints úteis:
 
-- `GET /health` — verificação de disponibilidade.
-- `GET /docs` — documentação OpenAPI gerada automaticamente.
+- `GET /docs` — documentação OpenAPI interativa (Swagger UI).
+- `POST /v1/sessao` — cria uma sessão para o médico.
+- `POST /v1/consulta` — pergunta clínica em linguagem natural.
+- `POST /v1/conduta` — sugestão de condutas para um quadro clínico.
+- `GET /v1/pacientes/{numero}/exames-pendentes` — exames pendentes do paciente.
+- `POST /v1/pacientes/{numero}/tratamento` — sugestão de tratamento personalizado.
+
+### Exemplo rápido via curl
+
+```bash
+# Cria sessão
+SESSAO=$(curl -s -X POST http://localhost:8000/v1/sessao \
+  -H "Content-Type: application/json" \
+  -d '{"id_medico": "DR-001"}' | python3 -c "import sys,json; print(json.load(sys.stdin)['sessao_id'])")
+
+# Pergunta clínica
+curl -s -X POST http://localhost:8000/v1/consulta \
+  -H "Content-Type: application/json" \
+  -d "{\"texto\": \"Tratamento de primeira linha para pneumonia bacteriana?\", \"sessao_id\": \"$SESSAO\"}" \
+  | python3 -m json.tool
+```
+
+Veja mais exemplos em [`docs/api.md`](docs/api.md).
 
 ## Estrutura do projeto
 
