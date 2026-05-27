@@ -1,0 +1,10 @@
+{
+  "id": "PROT-IAM-001",
+  "titulo": "Infarto Agudo do Miocárdio com Supradesnível de ST",
+  "nivel_evidencia": "A",
+  "condicoes_aplicaveis": ["infarto agudo do miocárdio", "iam", "síndrome coronariana aguda", "supra de ST"],
+  "contraindicacoes": ["sangramento ativo", "AVC hemorrágico recente", "uso recente de trombolítico"],
+  "termos_emergencia": ["infarto agudo", "supradesnível de ST", "parada cardiorrespiratória"],
+  "vigente": true,
+  "texto": "Protocolo de IAM com supradesnível de ST. 1. ECG em até 10 minutos da chegada para confirmar supra de ST. 2. AAS 300 mg mastigado, clopidogrel ou ticagrelor conforme protocolo institucional. 3. Anticoagulação plena com heparina ou enoxaparina. 4. Estratégia de reperfusão: angioplastia primária se disponível em até 90 min porta-balão; trombólise se angioplastia indisponível em até 120 min. 5. Estatina de alta potência. 6. Monitorização contínua, suporte de oxigênio se SatO2 <90%, controle de dor com morfina IV. 7. Encaminhar para unidade coronariana após estabilização."
+}

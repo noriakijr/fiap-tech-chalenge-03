@@ -1,0 +1,10 @@
+{
+  "id": "PROT-PNEU-001",
+  "titulo": "Pneumonia Adquirida na Comunidade em Adultos",
+  "nivel_evidencia": "B",
+  "condicoes_aplicaveis": ["pneumonia", "pneumonia adquirida na comunidade", "pac", "infecção respiratória baixa"],
+  "contraindicacoes": ["alergia a betalactâmicos sem alternativa terapêutica adequada"],
+  "termos_emergencia": [],
+  "vigente": true,
+  "texto": "Pneumonia Adquirida na Comunidade (PAC) em adultos imunocompetentes. 1. Avaliar gravidade pelo escore CURB-65 ou CRB-65 para definir local de tratamento (ambulatorial, enfermaria, UTI). 2. Solicitar radiografia de tórax e hemograma; em casos graves, gasometria e lactato. 3. Antibiótico empírico ambulatorial: amoxicilina 1g 8/8h por 7 dias; alternativa para alérgicos a penicilina: azitromicina ou levofloxacino. 4. Internados: ceftriaxona + azitromicina. 5. Avaliar resposta clínica em 48-72h; reavaliar diagnóstico se piora. 6. Vacinação anti-pneumocócica e anti-influenza após alta para pacientes de risco."
+}

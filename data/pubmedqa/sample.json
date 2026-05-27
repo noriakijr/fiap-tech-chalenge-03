@@ -1,0 +1,79 @@
+{
+  "PMID-1001": {
+    "QUESTION": "Antibiótico empírico precoce reduz mortalidade em sepse?",
+    "CONTEXTS": [
+      "Estudo retrospectivo de 12.345 pacientes com sepse demonstrou que o atraso do antibiótico em cada hora aumentou a mortalidade hospitalar em aproximadamente 7%.",
+      "Ensaio prospectivo mostrou redução absoluta de 4% na mortalidade quando antibiótico foi administrado em até 1 hora do reconhecimento."
+    ],
+    "LABELS": ["RESULTS", "CONCLUSIONS"],
+    "MESHES": ["Sepsis", "Anti-Bacterial Agents", "Mortality"],
+    "YEAR": 2022,
+    "reasoning_required_pred": "no",
+    "final_decision": "yes",
+    "LONG_ANSWER": "A administração precoce de antibiótico empírico está associada a redução significativa da mortalidade em sepse, conforme múltiplos estudos observacionais e intervencionais."
+  },
+  "PMID-1002": {
+    "QUESTION": "Uso rotineiro de corticosteroide em pneumonia adquirida na comunidade reduz mortalidade?",
+    "CONTEXTS": [
+      "Metanálise com 18 ensaios randomizados não encontrou diferença significativa na mortalidade entre corticosteroide e placebo em PAC não grave.",
+      "Subgrupo de PAC grave mostrou tendência a benefício, mas com heterogeneidade elevada."
+    ],
+    "LABELS": ["RESULTS", "DISCUSSION"],
+    "MESHES": ["Pneumonia", "Adrenal Cortex Hormones", "Community-Acquired Infections"],
+    "YEAR": 2021,
+    "reasoning_required_pred": "yes",
+    "final_decision": "maybe",
+    "LONG_ANSWER": "O benefício do corticosteroide em PAC depende da gravidade: parece neutro em casos leves e potencialmente benéfico em casos graves, mas a evidência é heterogênea. A interpretação requer avaliação individualizada do quadro clínico."
+  },
+  "PMID-1003": {
+    "QUESTION": "Trombólise sistêmica supera angioplastia primária em IAM com supra de ST quando há acesso a centro de hemodinâmica em até 90 minutos?",
+    "CONTEXTS": [
+      "Estudos comparativos mostram que a angioplastia primária produz menores taxas de reinfarto e mortalidade quando realizada em até 90 minutos do primeiro contato médico.",
+      "A trombólise é alternativa quando a angioplastia não está disponível dentro desse intervalo."
+    ],
+    "LABELS": ["RESULTS", "CONCLUSIONS"],
+    "MESHES": ["Myocardial Infarction", "Thrombolytic Therapy", "Percutaneous Coronary Intervention"],
+    "YEAR": 2020,
+    "reasoning_required_pred": "no",
+    "final_decision": "no",
+    "LONG_ANSWER": "A angioplastia primária é preferível à trombólise quando disponível em janela adequada; portanto, a tese de superioridade da trombólise nesse cenário é refutada."
+  },
+  "PMID-1004": {
+    "QUESTION": "Reposição volêmica agressiva com cristaloide melhora desfechos em sepse?",
+    "CONTEXTS": [
+      "Diretrizes recentes recomendam 30 mL/kg de cristaloide em até 3 horas para pacientes com hipoperfusão.",
+      "Estudos mais novos sugerem que volumes muito elevados podem associar-se a edema e pior desfecho em alguns subgrupos."
+    ],
+    "LABELS": ["BACKGROUND", "RESULTS"],
+    "MESHES": ["Sepsis", "Fluid Therapy", "Shock"],
+    "YEAR": 2023,
+    "reasoning_required_pred": "yes",
+    "final_decision": "yes",
+    "LONG_ANSWER": "Reposição volêmica adequada com cristaloide melhora desfechos em sepse, porém a estratégia deve ser titulada à resposta hemodinâmica do paciente. A interpretação requer julgamento clínico para evitar sobrecarga."
+  },
+  "PMID-1005": {
+    "QUESTION": "Inibidores da bomba de prótons reduzem risco de pneumonia hospitalar?",
+    "CONTEXTS": [
+      "Estudos observacionais sugerem aumento — não redução — de pneumonia hospitalar entre usuários crônicos de IBP, possivelmente por alterações na microbiota gástrica."
+    ],
+    "LABELS": ["RESULTS"],
+    "MESHES": ["Proton Pump Inhibitors", "Pneumonia", "Hospital Infections"],
+    "YEAR": 2019,
+    "reasoning_required_pred": "no",
+    "final_decision": "no",
+    "LONG_ANSWER": "IBPs não reduzem pneumonia hospitalar; pelo contrário, estão associados a maior risco. A hipótese é refutada."
+  },
+  "PMID-1006": {
+    "QUESTION": "Vacinação anti-pneumocócica reduz mortalidade em idosos com pneumonia?",
+    "CONTEXTS": [
+      "Coorte prospectiva mostrou redução de hospitalização por pneumonia em idosos vacinados, com efeito modesto sobre mortalidade geral.",
+      "Análises secundárias indicam maior benefício em portadores de comorbidades cardiovasculares."
+    ],
+    "LABELS": ["RESULTS", "CONCLUSIONS"],
+    "MESHES": ["Pneumococcal Vaccines", "Pneumonia", "Aged"],
+    "YEAR": 2024,
+    "reasoning_required_pred": "yes",
+    "final_decision": "maybe",
+    "LONG_ANSWER": "A vacinação reduz hospitalização por pneumonia em idosos, mas o efeito sobre mortalidade geral é inconsistente entre estudos. A aplicação ao paciente individual deve considerar comorbidades e perfil de risco."
+  }
+}
